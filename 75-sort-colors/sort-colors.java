@@ -18,19 +18,22 @@ class Solution {
         // Fill the array with the counts
         int index = 0;
 
-        // Fill 0s
+        //Fill 0s
         for (int i = 0; i < count0; i++) {
-            nums[index++] = 0;
+        nums[index] = 0;
+        index++;
         }
 
         // Fill 1s
         for (int i = 0; i < count1; i++) {
-            nums[index++] = 1;
+            nums[index] = 1;
+            index++;
         }
 
         // Fill 2s
         for (int i = 0; i < count2; i++) {
-            nums[index++] = 2;
+            nums[index] = 2;
+            index++;
         }
     }
 }
