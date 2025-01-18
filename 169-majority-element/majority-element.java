@@ -1,26 +1,32 @@
 class Solution {
     public int majorityElement(int[] nums) {
+        // Step 1: Find the candidate for the majority element
         int candidate = nums[0];
-        int count = 0;
-
-        // Phase 1: Find a candidate for the majority element
-        for (int num : nums) {
-            if (count == 0) {
-                candidate = num;
+        int count = 1;
+        
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == candidate) {
+                count++;
+            } else {
+                count--;
             }
-            count += (num == candidate) ? 1 : -1;
+            
+            if (count == 0) {
+                candidate = nums[i];
+                count = 1;
+            }
         }
-
-        // Phase 2: Verify that the candidate is the majority element
-        count = 0;
-        for (int num : nums) {
-            if (num == candidate) {
+        
+        // Step 2: Validate the candidate
+        count = 0; // Reset the count for validation
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == candidate) {
                 count++;
             }
         }
-
-        // Since the problem guarantees the majority element exists,
-        // no need for an explicit check; we can directly return the candidate.
+        
+        // Since the problem guarantees a majority element, return the candidate
         return candidate;
     }
+    
 }
