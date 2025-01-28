@@ -14,7 +14,7 @@ class Solution {
             // Update the maximum profit if this potential profit is greater
             profit = Math.max(profit, cost);
 
-            minimum = Math.min(prices[i], minimum); // checks is i-1 elemnrt is small or the minimum is small
+            minimum = Math.min(prices[i], minimum); // checks is i-1 element is small or the minimum is small
         }
 
         return profit;
