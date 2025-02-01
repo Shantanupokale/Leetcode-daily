@@ -6,7 +6,7 @@ class Solution {
             int digit = x % 10; // Extract the last digit
             x /= 10;           // Remove the last digit from x
 
-            // Check for overflow before updating `reversed`
+            // Check for overflow before updatings `reversed`
             if (reversed > Integer.MAX_VALUE / 10 || (reversed == Integer.MAX_VALUE / 10 && digit > 7)) {
                 return 0; // Overflow for positive integers
             }
